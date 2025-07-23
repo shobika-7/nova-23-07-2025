@@ -4,4 +4,4 @@ from django.http import HttpResponse
 def home(request):
     return HttpResponse("Welcome to the User Module Home Page")
 def index(request):
-    return render(request,'index.html')env\
+    return render(request,'index.html')

@@ -1,84 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PolarApp | Law & Sign</title>
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #694a6e, #764ba2);
       height: 100vh;
+      background: linear-gradient(to top right, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      color: #e0f7fa;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 15px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .checkbox {
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
-      justify-content: center;
     }
 
-    .login-box {
-      background: #ffffff;
-      padding: 40px;
+    .checkbox input {
+      margin-right: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4dd0e1;
+      color: #003a4f;
+      border: none;
       border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-      width: 300px;
-    }
-
-    .login-box h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .login-box input[type="text"],
-    .login-box input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0 20px 0;
-      border: none;
-      background: #f1f1f1;
-      border-radius: 8px;
-    }
-
-    .login-box button {
-      width: 100%;
-      padding: 12px;
-      background-color: #667eea;
-      border: none;
-      color: white;
-      font-size: 16px;
-      border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
+      transition: 0.3s ease;
     }
 
-    .login-box button:hover {
-      background-color: #5a67d8;
+    button:hover {
+      background: #00acc1;
+      color: #fff;
     }
 
-    .login-box .footer {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
+    /* Snow animation (optional flair) */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: #fff;
+      user-select: none;
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="login-box">
-    <h2>Login</h2>
-    <form>
-      <input type="text" placeholder="Username" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-    </form>
-    <div class="footer">
-      Don't have an account? <a href="#" style="color:#667eea;">Sign Up</a>
+
+
+  <div class="container">
+    <div class="card">
+      <h2>Terms of Use - PolarApp</h2>
+      <p>
+        Please read and accept the terms and conditions before proceeding.
+        By signing below, you agree to abide by all applicable laws while using PolarApp.
+      </p>
+      
+      <label for="signature">Your Full Name (as signature):</label>
+      <input type="text" id="signature" name="signature" placeholder="Enter your name..." required />
+
+      <div class="checkbox">
+        <input type="checkbox" id="agree" required />
+        <label for="agree">I agree to the terms and conditions.</label>
+      </div>
+
+      <button type="submit">Sign & Continue</button>
     </div>
   </div>
-
 </body>
 </html>
